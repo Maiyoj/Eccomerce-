@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { Children } from 'react';
+import {Fragment, createContext, useState, useEffect } from 'react';
 
-const ProductContext = () => {
-  return <div>ProductContext</div>;
+export const ProductContext = createContext();
+
+const ProductProvider = ({Children}) => {
+  return
+  (
+  <Fragment>
+  <ProductContext.Provider>
+  <Children />
+</ProductContext.Provider>
+
+    </Fragment>
+  ;)
 };
 
 export default ProductContext;
