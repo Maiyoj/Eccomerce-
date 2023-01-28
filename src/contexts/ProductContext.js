@@ -5,6 +5,12 @@ export const ProductContext = createContext();
 
 const ProductProvider = ({Children}) => {
   const [products, setProducts] = useState([])
+  useEffect(()=>{
+    const fetchProducts= async()=>{
+      const response = await fetch();
+    }
+  },[])
+
   return
   (
   <Fragment>
