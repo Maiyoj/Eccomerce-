@@ -8,11 +8,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 
+
 const App = () => {
   return(
   <div className='overflow-hidden'> 
   <Fragment>
-    <Header /> 
+    <Header />
     <Routes>
     <Route exact path="/" element={<Home />} />
     <Route exact path="/Product/:id" element={<ProductDetails />} /> 
