@@ -10,12 +10,11 @@ const Product = ({product}) => {
   return (
   <div>
     <div className='border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition'>
-      <div>
-        <div>
-          <img src={image} alt=''/>
-        </div>
-
-      </div>
+        <div className='w-full h-full flex justify-center items-center'>
+          <div className='w-[200px] mx-auto flex justify-center items-center'>
+          <img className='max-h-[160px] group-hover:scale-110 transition duration-300' src={image} alt=''/>
+          </div>
+        </div> 
     </div>
 
   </div>
