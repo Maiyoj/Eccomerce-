@@ -4,8 +4,10 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import ProductProvider from './contexts/ProductContext';
+import SidebarProvider from './contexts/SidebarContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+ <SidebarProvider>
   <ProductProvider>
   <React.StrictMode>
   <BrowserRouter>
@@ -13,5 +15,6 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
   </ProductProvider>
+  </SidebarProvider>
 
 );
