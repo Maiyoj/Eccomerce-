@@ -4,9 +4,12 @@ import { createContext, useEffect, useState } from 'react';
 export const CartContext = createContext()
 
 const CartProvider = ({children}) => {
+
+  const [] = useState([]) 
+
   return (
     <div>
-    <CartContext.Provider >
+    <CartContext.Provider>
     {children }
   </CartContext.Provider>
   </div>
