@@ -2,8 +2,10 @@ import React from 'react';
 import { useContext } from 'react';
 import { ProductContext } from '../contexts/ProductContext';
 import Product from '../components/Product';
+import { SidebarContext } from '../contexts/SidebarContext';
 
 const Home = () => {
+ 
   const {products} = useContext(ProductContext)
   const FilteredProducts = products.filter((item)=>{
     return(item.category === "men's clothing" || item.category==="women's clothing")
