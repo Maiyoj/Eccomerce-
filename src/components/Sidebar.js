@@ -9,7 +9,7 @@ import { CartContext } from '../contexts/CartContext';
 
 
 const Sidebar = () => {
-  const {cart} = useContext(CartContext);
+  const {cart,clearCart} = useContext(CartContext);
   
   const{isOpen, handleClose} = useContext(SidebarContext);
   return (
@@ -24,7 +24,17 @@ const Sidebar = () => {
     return(
       <div><CartItem key={item.id} item={item}/></div>
     )
-   })}</div>
+   })}
+   </div>
+   <div>
+    <div className='bg-pink-200 flex w-full justify-between items-center'>
+      <div >
+        <span>Total:</span>$ 1000
+      </div>
+      <div onClick={clearCart} className='cursor-pointer py-4  bg-red-500 text-white h-12 w-12 flex justify-center items-center text-xl'>
+        <FiTrash2/></div>
+    </div>
+   </div>
   </div>
   </>
   );
