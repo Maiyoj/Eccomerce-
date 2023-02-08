@@ -8,8 +8,10 @@ const Home = () => {
  
   const {products} = useContext(ProductContext)
   const FilteredProducts = products.filter((item)=>{
-    return(item.category === "men's clothing" || item.category==="women's clothing")
+    return(item.category === "jewelery" || item.category==="women's clothing")
   })
+
+  console.log(products)
  
   return(
    <div>
