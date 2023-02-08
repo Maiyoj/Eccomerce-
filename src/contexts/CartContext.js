@@ -4,8 +4,9 @@ import { createContext, useEffect, useState } from 'react';
 export const CartContext = createContext()
 
 const CartProvider = ({children}) => {
- const addToCart = ()=>{
-  console.log('Add to Cart')
+  
+ const addToCart = (id)=>{
+  console.log(`Add ${id} to Cart`)
  }
 
   return (
