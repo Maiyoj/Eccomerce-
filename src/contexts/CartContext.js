@@ -16,7 +16,7 @@ const CartProvider = ({children}) => {
   if (cartItem) {
     const newCart = [...cart].map((item)=>{
       if (item.id ===id ) {
-        return ({...item, amout: cartItem.amount + 1});
+        return ({...item, amount: cartItem.amount + 1});
       }
       else {
         return item;
