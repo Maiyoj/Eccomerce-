@@ -19,7 +19,7 @@ const Home = () => {
         max-w-sm mx-auto md:max-w-none mx-0'>
         {FilteredProducts.map((product)=>{
           return(
-           <Product id={product.id} product={product}/> 
+           <Product key={product.id} id={product.id} product={product}/> 
           )
 
         })}
