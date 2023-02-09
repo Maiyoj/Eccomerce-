@@ -5,7 +5,14 @@ import Product from '../components/Product';
 export const CartContext = createContext()
 
 const CartProvider = ({children}) => {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
+  //Increase Amount
+  const IncreaseAmount = ((id)=>{
+    const item = cart.find((item) => item.id === id);
+    addToCart(item, id)
+  });
+
+
   //clear cart 
   const clearCart = () => {
      setCart([])
@@ -44,7 +51,7 @@ const removeFromCart = ((id)=>{
  
   return (
     <div>
-    <CartContext.Provider value={{cart, addToCart, removeFromCart, clearCart}}>
+    <CartContext.Provider value={{cart, addToCart, removeFromCart, clearCart,IncreaseAmount}}>
     {children }
   </CartContext.Provider>
   </div>
