@@ -9,7 +9,7 @@ import { CartContext } from '../contexts/CartContext';
 
 
 const Sidebar = () => {
-  const {cart,clearCart} = useContext(CartContext);
+  const {cart,clearCart, total} = useContext(CartContext);
   
   const{isOpen, handleClose} = useContext(SidebarContext);
   return (
@@ -20,7 +20,8 @@ const Sidebar = () => {
   <div className='text-sm uppercase font-semibold'>Shopping Bag(0)</div>
   <div className='cursor-pointer w-8 h-8  flex justify-center items-center' onClick={handleClose}><IoMdArrowForward className='text-2xl'/></div>
    </div>
-   <div>{cart.map((item)=>{
+   <div className='flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto 
+   overflow-x-hidden border-b'>{cart.map((item)=>{
     return(
       <div><CartItem key={item.id} item={item}/></div>
     )
@@ -29,7 +30,7 @@ const Sidebar = () => {
    <div className='flex flex-col gap-y-3 py-4 mt-4'>
     <div className=' flex w-full justify-between items-center'>
       <div className='uppercase font-semibold'>
-        <span className='mr-2'>Total:</span>$ 1000
+        <span className='mr-2'>Total:</span>${parseFloat(total).toFixed(2)}
       </div>
       <div onClick={clearCart} className='cursor-pointer py-4  bg-red-500 text-white h-12 w-12 flex justify-center items-center text-xl'>
         <FiTrash2/></div>
